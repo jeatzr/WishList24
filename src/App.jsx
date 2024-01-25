@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 
 const wishes = [
   {
@@ -20,18 +21,24 @@ const wishes = [
 
 export default function App() {
   return (
-    <div>
+    <div className="app">
       <h1>My Wishlist</h1>
-      <fieldset>
-        <legend>New Wish:</legend>
+      <fieldset className="wish-input">
+        <legend className="wish-input__label">New Wish:</legend>
         <input
           type="text"
           placeholder="My new Wish"
         />
       </fieldset>
-      <ul>
+      <ul className="wish-list">
         {wishes.map((wish) => (
-          <li key={wish.id}>
+          <li
+            key={wish.id}
+            className={`
+            wish-list__item
+            ${wish.completed ? 'wish-list__item--done' : ''}
+            `}
+          >
             <input
               type="checkbox"
               checked={wish.completed}
