@@ -32,7 +32,10 @@ export default function App() {
     <div className="app">
       <h1>My Wishlist</h1>
       <WishInput onNewWish={onNewWish} />
-      <WishList wishes={wishes} />
+      <WishList
+        wishes={wishes}
+        setWishes={setWishes}
+      />
 
     </div>
   );
