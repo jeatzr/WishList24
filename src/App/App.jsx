@@ -36,6 +36,13 @@ export default function App() {
         wishes={wishes}
         setWishes={setWishes}
       />
+      <button
+        type="button"
+        className="wish-clear"
+        onClick={() => setWishes(wishes.filter((wish) => !wish.completed))}
+      >
+        Archive Wishes
+      </button>
 
     </div>
   );
